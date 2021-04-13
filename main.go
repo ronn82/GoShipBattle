@@ -127,7 +127,6 @@ func drawGame(ngame *game) {
 			fmt.Printf("-%d-", (i)/10)
 			fmt.Println()
 		}
-
 	}
 
 	for i := 0; i < 10; i++ {
