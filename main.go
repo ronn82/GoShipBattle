@@ -105,7 +105,7 @@ func drawGame(ngame *game) {
 			fmt.Print(" [ ]")
 
 		case computerShip:
-			fmt.Print(" [C]")
+			fmt.Print(" [ ]")
 
 		case userShip:
 			fmt.Print(" [@]")
@@ -184,10 +184,10 @@ func readCoordsFromStdin(title string) (int, int) {
 	reader := bufio.NewReader(os.Stdin)
 	text, _ := reader.ReadString('\n')
 	text = strings.Replace(text, "\n", "", -1)
-	x, e := strconv.Atoi(strings.Split(text, ",")[0])
-	y, e := strconv.Atoi(strings.Split(text, ",")[1])
+	x, errx := strconv.Atoi(strings.Split(text, ",")[0])
+	y, erry := strconv.Atoi(strings.Split(text, ",")[1])
 
-	if e != nil {
+	if errx != nil || erry != nil {
 		os.Exit(1)
 	}
 	return x, y
@@ -242,10 +242,6 @@ func Attack(isComputer bool, ngame *game) {
 				fmt.Println("Hitting nada")
 
 			}
-
 		}
-
-		//Read table, find the spot, change status
-
 	}
 }
