@@ -61,9 +61,9 @@ func main() {
 		if newGame.computerShips == 0 || newGame.userShips == 0 {
 
 			if newGame.computerShips > newGame.userShips {
-				fmt.Println("User wins!")
-			} else {
 				fmt.Println("Computer wins!")
+			} else {
+				fmt.Println("User wins!")
 			}
 			os.Exit(0)
 		}
